@@ -6,30 +6,23 @@ import { useState, useEffect } from "react";
 
 const WalletPage = () => {
     const [loading, setLoading] = useState<true | false>(true);
+    const [wallets, setWallet] = useState<Wallet[]>([]);
 
     const cookie = new Cookies();
 
-    let wallets = new Array<Wallet>();
-
-    let setWallet = (wallet: Wallet[]) => {
-        wallets = wallet;
-    };
-
-    let getWalletData = () => {
-        return wallets;
-    };
-
     useEffect(() => {
         getWallets(cookie.get("user_id"), "").then((wallet) => {
-            setWallet(wallet);
+            if (wallet.length > 0) {
+                setWallet(wallet);
+            }
             setLoading(false);
         });
     }, []);
 
-    if (loading) {
+    if (loading || wallets.length === 0) {
         return <>loading</>;
     } else {
-        return <WalletList wallets={getWalletData()}></WalletList>;
+        return <WalletList wallets={wallets}></WalletList>;
     }
 };
 

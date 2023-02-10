@@ -11,6 +11,10 @@ const WalletList = (props: WalletListProps) => {
             preparedList.push(<div className="row">{props.wallets[i].walletAddress}</div>);
         }
 
+        props.wallets.map((wallet) => {
+            <div className="container"></div>;
+        });
+
         return preparedList;
     };
 
