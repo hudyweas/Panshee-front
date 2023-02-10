@@ -1,0 +1,80 @@
+@use "../../global/css/variables";
+
+%rounded {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+    text-align: center;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.logIn {
+    min-width: 60px;
+    min-height: 40px;
+    padding: 8px 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: variables.$primary-color;
+    border-radius: 24px;
+    border: 0;
+}
+
+.signIn {
+    min-width: 60px;
+    min-height: 40px;
+    padding: 8px 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #efefef;
+    border-radius: 24px;
+    border: 0;
+}
+
+.smallText {
+    font-size: 12px;
+    background: none;
+    border: none;
+    padding: 0px;
+    text-align: left;
+    display: block;
+    color: rgb(51, 51, 51);
+    font-weight: bold;
+}
+
+.grey {
+    @extend %rounded;
+    background-color: #efefef;
+}
+
+.red {
+    @extend %rounded;
+    background-color: #e60023;
+    color: white;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgb(0 0 0/0.06);
+    }
+}

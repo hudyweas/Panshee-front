@@ -1,0 +1,21 @@
+@use "../../global/css/variables";
+
+svg {
+    fill: currentColor;
+    stroke-width: 0;
+    vertical-align: middle;
+}
+
+.logo {
+    color: variables.$primary-color;
+}
+
+.bell,
+.msg,
+.search {
+    color: #767676;
+}
+
+.cross {
+    color: #111;
+}

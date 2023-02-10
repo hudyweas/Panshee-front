@@ -1,0 +1,42 @@
+.container {
+    min-width: 80px;
+}
+
+.header {
+    border-radius: 8px;
+    width: 100%;
+
+    padding: 8px;
+    font-size: 12px;
+}
+
+.linkWrapper {
+    border-radius: 8px;
+    width: 100%;
+
+    padding: 8px;
+
+    &:hover {
+        background-color: #e9e9e9;
+    }
+
+    .link {
+        margin: 2px 0;
+
+        display: flex;
+        justify-content: space-between;
+
+        color: black;
+
+        font-weight: 600;
+
+        &::hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        &:visited {
+            color: black;
+        }
+    }
+}

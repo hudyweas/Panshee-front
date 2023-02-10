@@ -1,0 +1,20 @@
+label {
+    width: 100%;
+}
+
+.container {
+    width: 24px;
+    height: 24px;
+
+    border-radius: 50%;
+
+    border: 2px solid #767676;
+
+    input[type="radio"] {
+        appearance: none;
+    }
+}
+
+.active {
+    border: 8px solid #111;
+}

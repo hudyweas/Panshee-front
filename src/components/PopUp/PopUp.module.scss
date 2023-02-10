@@ -1,0 +1,28 @@
+.container {
+    position: relative;
+}
+
+.button {
+    // position: relative;
+}
+
+.popup {
+    margin-top: 20px;
+
+    z-index: 11000;
+
+    position: absolute;
+
+    padding: 8px;
+
+    border-radius: 16px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.hoverTheme {
+    color: white;
+    background-color: black;
+    font-size: 12px;
+    line-height: 16px;
+}
