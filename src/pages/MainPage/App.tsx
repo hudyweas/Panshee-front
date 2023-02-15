@@ -11,10 +11,6 @@ function App() {
         setLogged(isLoggedIn());
     });
 
-    if (logged === undefined) {
-        return <></>;
-    }
-
     if (logged) {
         return <LoggedIn />;
     } else {

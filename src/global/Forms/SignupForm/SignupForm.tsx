@@ -2,8 +2,8 @@ import styles from "./SignupForm.module.scss";
 import FormField from "../../../components/FormComponents/FormField/FormField";
 import FormButton from "../../../components/FormComponents/FormButton/FormButton";
 import Form from "../../../components/FormComponents/Form/Form";
-import { signUpForm_ValidationSchema } from "../../js/_validations";
-import { signUp } from "../../js/_api";
+import { loginForm_ValidationSchema, signUpForm_ValidationSchema } from "../../js/_validations";
+import { logIn, signUp } from "../../js/_api";
 
 const SignUpForm = () => {
     return (
@@ -30,7 +30,7 @@ const SignUpForm = () => {
                     headerMargin={true}
                 />
 
-                <FormButton value={"Sign Up"} />
+                <FormButton value={"Sign up"} />
             </div>
         </Form>
     );

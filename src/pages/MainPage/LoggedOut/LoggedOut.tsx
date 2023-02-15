@@ -1,10 +1,11 @@
 import Header from "../../../components/Header/Header";
 import { BrowserRouter as Router } from "react-router-dom";
+import LoginMenu from "../../../components/LoginMenu/LoginMenu";
 
 function LoggedOut() {
     return (
         <Router>
-            <Header auth={false}></Header>
+            <LoginMenu></LoginMenu>
         </Router>
     );
 }

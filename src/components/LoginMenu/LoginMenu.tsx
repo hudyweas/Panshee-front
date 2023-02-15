@@ -20,9 +20,9 @@ const LoginMenu = () => {
 
     if (modeState === "login") {
         return <Login />;
-    } else if (modeState === "signup") {
+    } else {
         return <SignUp />;
-    } else return <></>;
+    }
 };
 
 export default LoginMenu;

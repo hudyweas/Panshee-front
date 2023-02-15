@@ -1,0 +1,151 @@
+@use "../../global/css/_variables.scss";
+
+.container {
+    margin: auto;
+
+    color: black;
+    font-weight: 500;
+}
+
+.walletHeader {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20px;
+
+    color: black;
+    // background-color: variables.$primary-color;
+    background-color: white;
+    padding: 15px 30px;
+
+    border: 2px solid #cdcdcd;
+    border-radius: 8px;
+    background-color: #fff;
+
+    &:hover {
+        border: 2px solid #878787;
+    }
+}
+
+.totalValue {
+    margin-top: 5px;
+    text-align: center;
+    font-size: 14px;
+    color: gray;
+    span {
+        color: variables.$primary-color;
+        font-size: 18px;
+    }
+}
+
+.walletContainer {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 10px;
+}
+
+.tokenContainer {
+    width: 500px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 20px;
+    margin: 5px auto;
+    background-color: white;
+
+    border: 2px solid #cdcdcd;
+    background-color: #fff;
+
+    &:hover {
+        border: 2px solid #878787;
+    }
+
+    .tokenNameContainer {
+        padding: 5px;
+
+        cursor: pointer;
+    }
+
+    .tokenName {
+        font-weight: 700;
+    }
+
+    .tokenSymbol {
+        padding-left: 10px;
+        color: gray;
+        font-size: 12px;
+    }
+
+    .tokenPriceContainer {
+        max-width: 200px;
+        display: flex;
+    }
+
+    .price {
+        padding: 5px;
+        width: 70px;
+    }
+
+    .tokenPriceChange {
+        padding: 5px;
+        text-align: center;
+        width: 70px;
+        border-radius: 10px;
+        font-weight: 600;
+
+        color: white;
+    }
+
+    .tokenPriceChangeGreen {
+        @extend .tokenPriceChange;
+        background-color: #0fa60a;
+    }
+
+    .tokenPriceChangeRed {
+        @extend .tokenPriceChange;
+        background-color: #e60023;
+    }
+}
+
+.detailsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    padding: 10px;
+
+    color: variables.$primary-color;
+
+    .detailsName {
+        font-weight: 600;
+        font-size: 14px;
+        color: gray;
+    }
+}
+
+.settingsContainer {
+    display: flex;
+    flex-direction: column;
+    color: black;
+
+    .walletContainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: white;
+
+        padding: 4px 10px;
+        border-radius: 8px;
+    }
+
+    .walletAddress {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .deleteContainer {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -24,7 +24,7 @@ export interface AppListProps {
 export interface ButtonProps {
     className: string;
     value?: string;
-    onClick?: () => void | void;
+    onClick?: any;
     children?: React.ReactNode;
 }
 
@@ -51,8 +51,8 @@ export interface HeaderProps {
 }
 
 export interface PopUpProps {
+    children?: any;
     button: any;
-    html: any;
     hover?: any;
     theme?: string;
     mode?: string;
@@ -83,5 +83,6 @@ export interface RadioProps {
 }
 
 export interface WalletListProps {
+    settings?: boolean;
     wallets: Wallet[];
 }

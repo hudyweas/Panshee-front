@@ -2,16 +2,21 @@ import { Cookies } from "react-cookie";
 import { Currency, Wallet } from "./_interfaces";
 
 export const signUp = async (email: string, password: string) => {
-    const result = await fetch("/v1/user", {
+    console.log("here");
+    const result = await fetch(process.env.REACT_APP_BACKEND_PATH + "/v1/user", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            email,
+            user: { email },
             password,
         }),
-    }).then((response) => response.json());
+    })
+        .then((response) => response.json())
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 
     if ((result.status = "200")) {
         logIn(email, password);
@@ -28,7 +33,11 @@ export const logIn = async (email: string, password: string) => {
             email,
             password,
         }),
-    }).then((response) => response.json());
+    })
+        .then((response) => response.json())
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 
     console.log(result);
 
@@ -59,7 +68,11 @@ export const getWallets = async (user_id: string, walletAddresses: string) => {
                 "Content-Type": "application/json",
             },
         }
-    ).then((response) => response.json());
+    )
+        .then((response) => response.json())
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 
     let wallets = [];
 
@@ -79,4 +92,57 @@ export const getWallets = async (user_id: string, walletAddresses: string) => {
     }
 
     return wallets;
+};
+
+export const addWallet = async (walletAddress: string) => {
+    const cookie = new Cookies();
+    let user_id = cookie.get("user_id");
+    let access_token = cookie.get("access_token");
+
+    const result = await fetch(
+        process.env.REACT_APP_BACKEND_PATH + "/v1/user/" + user_id + "/wallets",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                bearer: access_token,
+                authorization: `Bearer ${access_token.value}`,
+            },
+            body: JSON.stringify({
+                wallet: {
+                    address: walletAddress,
+                },
+            }),
+        }
+    )
+        .then((response) => {
+            // window.location.href = "/settings";
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
+};
+
+export const deleteWallet = async (walletAddress: String) => {
+    const cookie = new Cookies();
+    let user_id = cookie.get("user_id");
+    let access_token = cookie.get("access_token");
+
+    const result = await fetch(
+        process.env.REACT_APP_BACKEND_PATH + "/v1/user/" + user_id + "/wallets" + walletAddress,
+        {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                bearer: access_token,
+                authorization: `Bearer ${access_token.value}`,
+            },
+        }
+    )
+        .then((response) => {
+            // window.location.href = "/settings";
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+        });
 };

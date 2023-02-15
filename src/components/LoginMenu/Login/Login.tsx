@@ -10,22 +10,13 @@ const Login = () => {
     return (
         <FullScreenBlocker>
             <div className={styles["container"]}>
-                <div
-                    className={styles["closeButtonWrapper"]}
-                    onClick={() => {
-                        signStateService.changeState("main");
-                    }}
-                >
-                    <SvgImage type={"cross"} size={"18px"}></SvgImage>
-                </div>
-
                 <div className={styles["contentBox"]}>
                     <div className={styles["logoBox"]}>
                         <SvgImage size="40" type={"logo"} />
                     </div>
 
                     <div className={styles["welcomeBox"]}>
-                        <span>Welcome on Pinterest</span>
+                        <span>Welcome on Panshee</span>
                     </div>
 
                     <div className={styles["formBox"]}>

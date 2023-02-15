@@ -4,14 +4,18 @@ import "./index.scss";
 import App from "./pages/MainPage/App";
 import reportWebVitals from "./reportWebVitals";
 import { CookiesProvider } from "react-cookie";
+import Footer from "./components/Footer/Footer";
 
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 root.render(
-    <React.StrictMode>
+    // <React.StrictMode>
+    <>
         <CookiesProvider>
             <App />
         </CookiesProvider>
-    </React.StrictMode>
+        <Footer></Footer>
+    </>
+    // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

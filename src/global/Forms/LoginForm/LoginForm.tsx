@@ -4,7 +4,7 @@ import FormField from "../../../components/FormComponents/FormField/FormField";
 import FormButton from "../../../components/FormComponents/FormButton/FormButton";
 import Form from "../../../components/FormComponents/Form/Form";
 import { loginForm_ValidationSchema } from "../../js/_validations";
-import { logIn } from "../../js/_api";
+import { logIn, signUp } from "../../js/_api";
 
 const LoginForm = () => {
     return (

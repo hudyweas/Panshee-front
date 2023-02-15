@@ -1,5 +1,8 @@
+@use "../../global/css/variables";
+
 .container {
     min-width: 80px;
+    color: white;
 }
 
 .header {
@@ -17,7 +20,7 @@
     padding: 8px;
 
     &:hover {
-        background-color: #e9e9e9;
+        background-color: variables.$primary-color;
     }
 
     .link {
@@ -25,8 +28,7 @@
 
         display: flex;
         justify-content: space-between;
-
-        color: black;
+        color: white;
 
         font-weight: 600;
 
@@ -36,7 +38,7 @@
         }
 
         &:visited {
-            color: black;
+            color: white;
         }
     }
 }

@@ -7,7 +7,7 @@ const Logo = (props: LogoProps) => {
             className={styles[props.type]}
             role="img"
             viewBox="0 0 24 24"
-            aria-label="Pinterest"
+            aria-label="Panshee"
             height={props.size}
             width={props.size}
         >

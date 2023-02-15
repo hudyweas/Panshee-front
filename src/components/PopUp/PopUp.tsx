@@ -53,9 +53,28 @@ const PopUp = (props: PopUpProps) => {
                     {popup && (
                         <ClickAwayListener onClickAway={() => setPopup(false)}>
                             <div id={popupId} className={styles["popup"]}>
-                                {props.html}
+                                {props.children}
                             </div>
                         </ClickAwayListener>
+                    )}
+                </div>
+            </div>
+        );
+    } else if (props.mode === "only-hover") {
+        return (
+            <div className={styles["container"]}>
+                <div
+                    id={buttonId}
+                    className={styles["button"]}
+                    onClick={() => setPopup(true)}
+                    onMouseEnter={() => setHover(true)}
+                    onMouseLeave={() => setHover(false)}
+                >
+                    {props.button}
+                    {hover && !popup && (
+                        <div id={popupId} className={`${styles["popup"]} ${styles["hoverTheme"]}`}>
+                            {props.hover}
+                        </div>
                     )}
                 </div>
             </div>
@@ -68,7 +87,7 @@ const PopUp = (props: PopUpProps) => {
                     {popup && (
                         <ClickAwayListener onClickAway={() => setPopup(false)}>
                             <div id={popupId} className={styles["popup"]}>
-                                {props.html}
+                                {props.children}
                             </div>
                         </ClickAwayListener>
                     )}

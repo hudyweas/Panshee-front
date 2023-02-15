@@ -1,8 +1,9 @@
 import Header from "../../../components/Header/Header";
-import { BrowserRouter as Router } from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { isLoggedIn } from "../../../global/js/_functions";
 import WalletPage from "../../WalletPage/WalletPage";
+import SettingsPage from "../../SettingsPage/SettingsPage";
 
 function LoggedIn() {
     const [logged, setLogged] = useState<true | false>();
@@ -15,7 +16,10 @@ function LoggedIn() {
         return (
             <Router>
                 <Header auth={true}></Header>
-                <WalletPage></WalletPage>
+                <Routes>
+                    <Route path="/" element={<WalletPage></WalletPage>}></Route>
+                    <Route path="/settings" element={<SettingsPage></SettingsPage>}></Route>
+                </Routes>
             </Router>
         );
     } else {

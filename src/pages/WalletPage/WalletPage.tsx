@@ -19,7 +19,7 @@ const WalletPage = () => {
         });
     }, []);
 
-    if (loading || wallets.length === 0) {
+    if (loading) {
         return <>loading</>;
     } else {
         return <WalletList wallets={wallets}></WalletList>;
